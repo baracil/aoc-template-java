@@ -13,6 +13,6 @@ public interface Bag<T> {
     void addOne(@NonNull T element);
 
     void removeOne(@NonNull T element);
-
-
+    
+    int nbKeys();
 }

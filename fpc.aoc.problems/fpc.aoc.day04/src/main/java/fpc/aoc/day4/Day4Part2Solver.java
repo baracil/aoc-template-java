@@ -1,10 +1,7 @@
 package fpc.aoc.day4;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
-
-import java.util.stream.Stream;
 
 public class Day4Part2Solver extends Day4Solver {
 
@@ -12,13 +9,12 @@ public class Day4Part2Solver extends Day4Solver {
         return new Day4Part2Solver().createProblem();
     }
 
-    @Override
-    public boolean isSkipped() {
-        return true;
+    public Day4Part2Solver() {
+        super();
     }
 
     @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+    public boolean isAdventCoin(byte[] data) {
+        return data[0] == 0 && data[1] == 0 && data[2] == 0;
     }
 }

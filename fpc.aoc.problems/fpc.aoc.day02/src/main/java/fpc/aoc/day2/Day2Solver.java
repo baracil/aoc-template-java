@@ -5,14 +5,14 @@ import fpc.aoc.input.SmartSolver;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-import java.util.function.Function;
 import java.util.stream.Stream;
 
 @RequiredArgsConstructor
-public abstract class Day2Solver extends SmartSolver<Stream<String>, String> {
+public abstract class Day2Solver extends SmartSolver<Stream<Present>, Integer> {
 
     @Override
-    protected @NonNull Converter<Stream<String>> getConverter() {
-        return Converter.IDENTITY;
+    protected @NonNull Converter<Stream<Present>> getConverter() {
+        return s -> s.map(Present::parse);
     }
+
 }

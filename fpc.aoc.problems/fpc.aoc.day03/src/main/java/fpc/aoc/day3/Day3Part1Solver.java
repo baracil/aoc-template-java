@@ -1,7 +1,7 @@
 package fpc.aoc.day3;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
+import fpc.aoc.common.Displacement;
 import lombok.NonNull;
 
 import java.util.stream.Stream;
@@ -13,13 +13,11 @@ public class Day3Part1Solver extends Day3Solver {
     }
 
     @Override
-    public boolean isSkipped() {
-        return true;
-    }
+    public @NonNull Integer solve(@NonNull Stream<Displacement> input) {
+        final var delivery = new Delivery();
 
-    @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
-    }
+        input.forEach(delivery::move);
 
+        return delivery.getNbVisitedHouses();
+    }
 }

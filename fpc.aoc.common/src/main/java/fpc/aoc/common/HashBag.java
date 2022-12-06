@@ -1,6 +1,5 @@
 package fpc.aoc.common;
 
-import fpc.aoc.common.Bag;
 import lombok.NonNull;
 
 import java.util.HashMap;
@@ -23,6 +22,11 @@ public class HashBag<T> implements Bag<T> {
     @Override
     public void removeOne(@NonNull T element) {
         counts.merge(element, -1, this::add);
+    }
+
+    @Override
+    public int nbKeys() {
+        return counts.keySet().size();
     }
 
     private Integer add(int i1, int i2) {
